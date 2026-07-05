@@ -1,0 +1,131 @@
+<svg width="1280" height="760" viewBox="0 0 1280 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7FAFF"/>
+      <stop offset="1" stop-color="#EEF4FF"/>
+    </linearGradient>
+    <linearGradient id="skill" x1="390" y1="120" x2="810" y2="480" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1F6FFF"/>
+      <stop offset="1" stop-color="#6F5CFF"/>
+    </linearGradient>
+    <linearGradient id="base" x1="850" y1="116" x2="1180" y2="486" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#16B3A7"/>
+      <stop offset="1" stop-color="#2F8DF7"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#16325C" flood-opacity="0.14"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2L10 6L2 10" stroke="#52709A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      .title{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:34px;font-weight:800;fill:#102033}
+      .subtitle{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:18px;font-weight:500;fill:#5C6F88}
+      .label{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:21px;font-weight:760;fill:#17233A}
+      .small{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:15px;font-weight:560;fill:#5D6F86}
+      .whiteLabel{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:22px;font-weight:800;fill:white}
+      .whiteSmall{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:15px;font-weight:570;fill:rgba(255,255,255,.82)}
+      .pill{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:14px;font-weight:700;fill:#2B5FB8}
+      .code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:13px;font-weight:650;fill:#46617F}
+    </style>
+  </defs>
+
+  <rect width="1280" height="760" rx="32" fill="url(#bg)"/>
+  <circle cx="1112" cy="94" r="174" fill="#DDEBFF" opacity=".55"/>
+  <circle cx="128" cy="682" r="220" fill="#DFF8F6" opacity=".55"/>
+
+  <text x="64" y="72" class="title">deck-library：把 H5 演示页变成可复用素材库</text>
+  <text x="64" y="104" class="subtitle">归档页面级素材，人在 Base 里看缩略图挑选，智能体按编号组合，再交给 feishu-deck-h5 渲染交付。</text>
+
+  <g filter="url(#shadow)">
+    <rect x="64" y="162" width="250" height="420" rx="24" fill="white"/>
+    <rect x="88" y="188" width="112" height="30" rx="15" fill="#EAF2FF"/>
+    <text x="105" y="209" class="pill">输入来源</text>
+    <text x="88" y="256" class="label">已有 H5 演示项目</text>
+    <text x="88" y="292" class="small">feishu-deck-h5 output</text>
+    <text x="88" y="328" class="code">deck.json</text>
+    <text x="88" y="356" class="code">index.html</text>
+    <text x="88" y="384" class="code">assets/</text>
+    <text x="88" y="412" class="code">pages/page-XX.png</text>
+    <path d="M92 472H286" stroke="#DCE7F5" stroke-width="2"/>
+    <text x="88" y="510" class="small">不解析大 HTML</text>
+    <text x="88" y="538" class="small">以 DeckJSON 为源头</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="384" y="138" width="320" height="468" rx="28" fill="url(#skill)"/>
+    <text x="416" y="188" class="whiteLabel">deck-library Skill</text>
+    <text x="416" y="218" class="whiteSmall">素材库编排层，不内置渲染器</text>
+
+    <rect x="416" y="258" width="256" height="70" rx="18" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.2)"/>
+    <text x="438" y="286" class="whiteLabel" font-size="18">archive.py</text>
+    <text x="438" y="310" class="whiteSmall">入库、生成编号、上传附件</text>
+
+    <rect x="416" y="350" width="256" height="70" rx="18" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.2)"/>
+    <text x="438" y="378" class="whiteLabel" font-size="18">search.py</text>
+    <text x="438" y="402" class="whiteSmall">按描述、场景、关键词检索</text>
+
+    <rect x="416" y="442" width="256" height="70" rx="18" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.2)"/>
+    <text x="438" y="470" class="whiteLabel" font-size="18">compose_materials.py</text>
+    <text x="438" y="494" class="whiteSmall">按 M001/M008 组合 deck.json</text>
+
+    <rect x="416" y="534" width="256" height="40" rx="20" fill="rgba(255,255,255,.2)"/>
+    <text x="438" y="559" class="whiteSmall">质量与动效元数据：native_h5 / subtle</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="774" y="146" width="348" height="452" rx="28" fill="white"/>
+    <rect x="806" y="176" width="120" height="30" rx="15" fill="#E8FBF8"/>
+    <text x="824" y="197" class="pill" fill="#17877E">飞书 Base</text>
+    <text x="806" y="246" class="label">素材库数据层</text>
+
+    <rect x="806" y="284" width="284" height="112" rx="20" fill="#F1FBFA" stroke="#CDEDEA"/>
+    <text x="830" y="320" class="label" font-size="20">Decks 表</text>
+    <text x="830" y="350" class="small">整份 deck 的附件与依赖包</text>
+    <text x="830" y="376" class="code">deck_json / inline_html / assets_zip</text>
+
+    <rect x="806" y="422" width="284" height="132" rx="20" fill="#F3F7FF" stroke="#D8E5FF"/>
+    <text x="830" y="458" class="label" font-size="20">Materials 表</text>
+    <text x="830" y="488" class="small">一行 = 一个页面级素材</text>
+    <text x="830" y="514" class="code">M001 / 缩略图 / 中文描述</text>
+    <text x="830" y="538" class="code">slide_payload_json</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="180" y="632" width="330" height="72" rx="22" fill="white"/>
+    <text x="210" y="662" class="label" font-size="20">人和智能体</text>
+    <text x="210" y="688" class="small">看 Base 缩略图，选择 M001 / M008，或按描述检索候选素材</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="782" y="634" width="332" height="72" rx="22" fill="#101B2D"/>
+    <text x="812" y="664" class="whiteLabel" font-size="20">feishu-deck-h5</text>
+    <text x="812" y="690" class="whiteSmall">peer dependency：render-deck.py --final + validate gate</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1150" y="294" width="76" height="170" rx="24" fill="#0FB981"/>
+    <text x="1188" y="332" class="whiteLabel" text-anchor="middle" font-size="18">新</text>
+    <text x="1188" y="366" class="whiteLabel" text-anchor="middle" font-size="18">H5</text>
+    <text x="1188" y="400" class="whiteLabel" text-anchor="middle" font-size="18">材料</text>
+    <text x="1188" y="432" class="whiteSmall" text-anchor="middle" font-size="13">HTML</text>
+  </g>
+
+  <path d="M314 372H366" stroke="#52709A" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="324" y="350" class="small">归档</text>
+
+  <path d="M704 326H758" stroke="#52709A" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="714" y="304" class="small">写入</text>
+
+  <path d="M948 598V622" stroke="#52709A" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="966" y="620" class="small">组合后渲染</text>
+
+  <path d="M510 668H764" stroke="#52709A" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="568" y="646" class="small">给出素材编号</text>
+
+  <path d="M1114 670C1160 654 1188 598 1188 474" stroke="#52709A" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="1158" y="620" class="small">交付</text>
+
+  <path d="M806 554C704 648 616 664 512 668" stroke="#52709A" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+  <text x="620" y="612" class="small">浏览 / 检索</text>
+</svg>

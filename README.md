@@ -16,50 +16,9 @@
 
 ## 架构图
 
-```mermaid
-flowchart LR
-    subgraph Source["已有演示项目"]
-        A["feishu-deck-h5 output<br/>deck.json / index.html / assets / pages"]
-    end
+![deck-library 架构图](docs/architecture.svg)
 
-    subgraph Skill["deck-library Skill"]
-        B["archive.py<br/>入库与附件上传"]
-        C["search.py<br/>检索辅助"]
-        D["compose_materials.py<br/>按素材编号组合"]
-        Q["质量与动效元数据<br/>material_type / quality_tier / motion_tier"]
-    end
-
-    subgraph Base["飞书 Base 素材库"]
-        E["Decks 表<br/>deck_json / inline_html / assets_zip / cover_thumbnail"]
-        F["Materials 表<br/>M001 / 缩略图 / 中文描述 / slide_payload_json"]
-    end
-
-    subgraph Human["人和智能体"]
-        G["人在 Base 画廊看缩略图<br/>选择 M001 / M008"]
-        H["智能体按描述检索<br/>返回候选素材编号"]
-    end
-
-    subgraph Renderer["feishu-deck-h5 peer dependency"]
-        I["render-deck.py --final"]
-        J["validate.py / visual gate"]
-    end
-
-    K["新 H5 演示材料<br/>deck.json + index.html"]
-
-    A --> B
-    B --> E
-    B --> F
-    B --> Q
-    F --> G
-    F --> H
-    G --> D
-    H --> D
-    E --> D
-    F --> D
-    D --> I
-    I --> J
-    J --> K
-```
+这张图可以理解为：`deck-library` 不是渲染器，而是素材库编排层。它把已有 H5 演示页拆成 Base 里的页面级素材，让人和智能体按缩略图、描述、编号挑选，再把选中的 `slide_payload_json` 组合成新的 `deck.json`，最终交给 sibling `feishu-deck-h5` 渲染和验证。
 
 ## 核心心智模型
 
@@ -181,4 +140,3 @@ python3 -m unittest discover -s skills/deck-library/tests -p 'test_*.py'
 - `.deck-library-cache/`
 - 客户素材
 - 含私有内容的渲染交付物
-
