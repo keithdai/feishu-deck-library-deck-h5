@@ -1,0 +1,10 @@
+.DS_Store
+.env
+.deck-library-cache/
+runs/
+*.pyc
+__pycache__/
+.pytest_cache/
+.coverage
+htmlcov/
+
