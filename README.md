@@ -16,7 +16,15 @@
 
 ## 架构图
 
-![deck-library 架构图](docs/architecture.svg)
+先理解 `deck-library` 的来源：`deck-h5` / `feishu-deck-h5` 的基础要素是 `deck.json` 和资源素材包（如 `assets/`、`pages/`、图片、logo 等）。`deck-library` 正是在这个基础上，把“整份 deck”进一步拆成“页面级素材”，再用 Base 管理、检索和重新组合。
+
+### 可编辑 SVG 版
+
+![deck-library SVG 架构图](docs/architecture.svg)
+
+### 图片版 PNG
+
+![deck-library 图片版架构图](docs/architecture-image.png)
 
 这张图可以理解为：`deck-library` 不是渲染器，而是素材库编排层。它把已有 H5 演示页拆成 Base 里的页面级素材，让人和智能体按缩略图、描述、编号挑选，再把选中的 `slide_payload_json` 组合成新的 `deck.json`，最终交给 sibling `feishu-deck-h5` 渲染和验证。
 
