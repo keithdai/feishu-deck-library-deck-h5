@@ -44,13 +44,13 @@
   <circle cx="168" cy="780" r="260" fill="#DFF8F6" opacity=".65"/>
   <path d="M0 154H1440" stroke="#DCE8F8"/>
 
-  <text x="64" y="72" class="title">deck-library：把 H5 演示页变成可复用素材库</text>
-  <text x="64" y="106" class="subtitle">基础前提：deck-h5 / feishu-deck-h5 的核心产物是 deck.json + 资源素材；deck-library 在这个基础上做页面级归档、检索、组合和复用。</text>
+  <text x="64" y="72" class="title">deck-library：基于 deck.json + 素材，沉淀可复用页面素材库</text>
+  <text x="64" y="106" class="subtitle">先有 deck-h5 / feishu-deck-h5 的标准产物，再用飞书多维表格管理页面素材；人选编号，智能体组合，新材料继续用 deck-h5 渲染。</text>
 
   <g filter="url(#shadow)">
     <rect x="64" y="194" width="316" height="458" rx="28" fill="url(#deck)"/>
     <text x="96" y="246" class="whiteLabel">deck-h5 基础要素</text>
-    <text x="96" y="276" class="whiteSmall">先有标准 DeckJSON 和资源素材，才有素材库复用</text>
+    <text x="96" y="276" class="whiteSmall">标准 DeckJSON + 资源素材</text>
 
     <rect x="96" y="326" width="252" height="88" rx="20" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.18)"/>
     <text x="122" y="360" class="whiteLabel" font-size="20">deck.json</text>
@@ -66,30 +66,30 @@
 
   <g filter="url(#shadow)">
     <rect x="448" y="194" width="326" height="458" rx="28" fill="url(#skill)"/>
-    <text x="480" y="246" class="whiteLabel">deck-library Skill</text>
-    <text x="480" y="276" class="whiteSmall">素材库编排层，不内置渲染器</text>
+    <text x="480" y="246" class="whiteLabel">deck-library Skill 怎么用</text>
+    <text x="480" y="276" class="whiteSmall">安装后按 4 步把页面变成可复用素材</text>
 
     <rect x="480" y="318" width="262" height="70" rx="18" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.2)"/>
-    <text x="502" y="346" class="whiteLabel" font-size="18">archive.py</text>
-    <text x="502" y="370" class="whiteSmall">入库、生成编号、上传附件</text>
+    <text x="502" y="346" class="whiteLabel" font-size="18">1. 安装依赖</text>
+    <text x="502" y="370" class="whiteSmall">旁边放 feishu-deck-h5</text>
 
     <rect x="480" y="410" width="262" height="70" rx="18" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.2)"/>
-    <text x="502" y="438" class="whiteLabel" font-size="18">search.py</text>
-    <text x="502" y="462" class="whiteSmall">按描述、场景、关键词检索</text>
+    <text x="502" y="438" class="whiteLabel" font-size="18">2. 配置多维表格</text>
+    <text x="502" y="462" class="whiteSmall">建 Decks / Materials 两张表</text>
 
     <rect x="480" y="502" width="262" height="70" rx="18" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.2)"/>
-    <text x="502" y="530" class="whiteLabel" font-size="18">compose_materials.py</text>
-    <text x="502" y="554" class="whiteSmall">按 M001/M008 组合 deck.json</text>
+    <text x="502" y="530" class="whiteLabel" font-size="18">3. archive 入库</text>
+    <text x="502" y="554" class="whiteSmall">每页生成 M001 + 缩略图</text>
 
     <rect x="480" y="594" width="262" height="36" rx="18" fill="rgba(255,255,255,.2)"/>
-    <text x="502" y="617" class="whiteSmall">质量与动效：native_h5 / subtle</text>
+    <text x="502" y="617" class="whiteSmall">4. 选编号 compose，渲染交付</text>
   </g>
 
   <g filter="url(#shadow)">
     <rect x="840" y="194" width="348" height="458" rx="28" fill="white"/>
-    <rect x="872" y="224" width="120" height="30" rx="15" fill="#E8FBF8"/>
-    <text x="890" y="245" class="pill" fill="#17877E">飞书 Base</text>
-    <text x="872" y="294" class="label">素材库数据层</text>
+    <rect x="872" y="224" width="176" height="30" rx="15" fill="#E8FBF8"/>
+    <text x="890" y="245" class="pill" fill="#17877E">飞书多维表格 Base</text>
+    <text x="872" y="294" class="label">团队可视化素材库</text>
 
     <rect x="872" y="332" width="284" height="112" rx="20" fill="#F1FBFA" stroke="#CDEDEA"/>
     <text x="896" y="368" class="label" font-size="20">Decks 表</text>
@@ -105,8 +105,8 @@
 
   <g filter="url(#shadow)">
     <rect x="312" y="718" width="376" height="72" rx="22" fill="white"/>
-    <text x="342" y="748" class="label" font-size="20">人和智能体</text>
-    <text x="342" y="774" class="small">看 Base 缩略图，选择 M001 / M008，或按描述检索候选素材</text>
+    <text x="342" y="748" class="label" font-size="20">人和智能体怎么协作</text>
+    <text x="342" y="774" class="small">人在多维表格看缩略图选 M001；智能体按编号组合新 deck</text>
   </g>
 
   <g filter="url(#shadow)">
@@ -128,7 +128,7 @@
   <text x="390" y="402" class="small">基于基础产物归档</text>
 
   <path d="M774 424H824" stroke="#58759A" stroke-width="3" marker-end="url(#arrow)"/>
-  <text x="788" y="402" class="small">写入素材库</text>
+  <text x="788" y="402" class="small">写入多维表格</text>
 
   <path d="M1016 652V704" stroke="#58759A" stroke-width="3" marker-end="url(#arrow)"/>
   <text x="1034" y="690" class="small">组合后渲染</text>
