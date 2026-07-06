@@ -1,32 +1,32 @@
-<svg width="1440" height="1100" viewBox="0 0 1440 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1440" height="1180" viewBox="0 0 1440 1180" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1440" y2="1100" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="0" y1="0" x2="1440" y2="1180" gradientUnits="userSpaceOnUse">
       <stop stop-color="#F8FBFF"/>
-      <stop offset=".54" stop-color="#EEF6FF"/>
+      <stop offset="0.55" stop-color="#EEF6FF"/>
       <stop offset="1" stop-color="#EAF8F4"/>
     </linearGradient>
-    <linearGradient id="hero" x1="72" y1="44" x2="1368" y2="148" gradientUnits="userSpaceOnUse">
+    <linearGradient id="hero" x1="72" y1="54" x2="1368" y2="164" gradientUnits="userSpaceOnUse">
       <stop stop-color="#10233D"/>
-      <stop offset=".55" stop-color="#1E5BFF"/>
+      <stop offset="0.55" stop-color="#1E5BFF"/>
       <stop offset="1" stop-color="#0FB986"/>
     </linearGradient>
-    <linearGradient id="primary" x1="102" y1="188" x2="894" y2="976" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#1D72FF"/>
-      <stop offset="1" stop-color="#725DFF"/>
-    </linearGradient>
-    <linearGradient id="dark" x1="118" y1="198" x2="826" y2="292" gradientUnits="userSpaceOnUse">
+    <linearGradient id="deck" x1="96" y1="260" x2="760" y2="360" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0C1B31"/>
       <stop offset="1" stop-color="#203A67"/>
     </linearGradient>
-    <linearGradient id="delivery" x1="118" y1="872" x2="826" y2="968" gradientUnits="userSpaceOnUse">
+    <linearGradient id="base" x1="196" y1="438" x2="1244" y2="604" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1D72FF"/>
+      <stop offset="1" stop-color="#0FB986"/>
+    </linearGradient>
+    <linearGradient id="delivery" x1="220" y1="892" x2="1220" y2="1012" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0FB986"/>
       <stop offset="1" stop-color="#2478F4"/>
     </linearGradient>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#17345D" flood-opacity=".14"/>
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#17345D" flood-opacity="0.14"/>
     </filter>
     <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#17345D" flood-opacity=".10"/>
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#17345D" flood-opacity="0.10"/>
     </filter>
     <marker id="arrowDown" markerWidth="12" markerHeight="12" refX="6" refY="10" orient="auto">
       <path d="M2 3L6 10L10 3" stroke="#496782" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -35,128 +35,90 @@
       <path d="M3 2L10 6L3 10" stroke="#496782" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
     </marker>
     <style>
-      .title{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:38px;font-weight:880;fill:#102033}
-      .subtitle{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:18px;font-weight:560;fill:#5D7088}
-      .eyebrow{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:13px;font-weight:820;letter-spacing:.12em;fill:#62809E}
-      .label{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:24px;font-weight:850;fill:#14243A}
-      .stepTitle{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:22px;font-weight:850;fill:#14243A}
-      .small{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:16px;font-weight:580;fill:#60738A}
-      .mini{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:14px;font-weight:650;fill:#6F8095}
-      .code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:14px;font-weight:720;fill:#435D7C}
-      .whiteLabel{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:24px;font-weight:860;fill:white}
-      .whiteSmall{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:16px;font-weight:590;fill:rgba(255,255,255,.86)}
-      .whiteCode{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:14px;font-weight:720;fill:rgba(255,255,255,.88)}
-      .num{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:18px;font-weight:860;fill:#FFFFFF}
-      .green{fill:#167D68}
-      .blue{fill:#1D5FE8}
+      .title{font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif;font-size:40px;font-weight:880;fill:#102033}
+      .subtitle{font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif;font-size:18px;font-weight:560;fill:#5D7088}
+      .eyebrow{font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif;font-size:13px;font-weight:820;letter-spacing:.12em;fill:#62809E}
+      .label{font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif;font-size:24px;font-weight:850;fill:#14243A}
+      .cardTitle{font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif;font-size:22px;font-weight:850;fill:#14243A}
+      .small{font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif;font-size:16px;font-weight:580;fill:#60738A}
+      .mini{font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif;font-size:14px;font-weight:650;fill:#6F8095}
+      .code{font-family:&quot;SFMono-Regular&quot;,Consolas,&quot;Liberation Mono&quot;,monospace;font-size:14px;font-weight:720;fill:#435D7C}
+      .whiteLabel{font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif;font-size:24px;font-weight:860;fill:white}
+      .whiteSmall{font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif;font-size:16px;font-weight:590;fill:rgba(255,255,255,.88)}
+      .whiteCode{font-family:&quot;SFMono-Regular&quot;,Consolas,&quot;Liberation Mono&quot;,monospace;font-size:14px;font-weight:720;fill:rgba(255,255,255,.90)}
+      .pill{font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif;font-size:15px;font-weight:760;fill:#285170}
+      .blue{fill:#1D5FE8}.green{fill:#167D68}.orange{fill:#B86A13}
     </style>
   </defs>
 
-  <rect width="1440" height="1100" rx="36" fill="url(#bg)"/>
-  <circle cx="1218" cy="162" r="264" fill="#DCEAFF" opacity=".72"/>
-  <circle cx="158" cy="942" r="296" fill="#DDF8F2" opacity=".70"/>
-  <path d="M0 166H1440" stroke="#DCE7F7"/>
+  <rect width="1440" height="1180" rx="36" fill="url(#bg)"/>
+  <circle cx="1240" cy="160" r="280" fill="#DCEAFF" opacity=".74"/>
+  <circle cx="172" cy="1012" r="320" fill="#DDF8F2" opacity=".72"/>
+  <path d="M0 178H1440" stroke="#DCE7F7"/>
 
-  <text x="72" y="78" class="title">deck-library：竖向理解一条素材复用流水线</text>
-  <text x="72" y="114" class="subtitle">先有 deck-h5 的 deck.json + 资源素材，再用 Skill 入库、检索、组合，最后仍交给 feishu-deck-h5 渲染和验证。</text>
-  <rect x="72" y="132" width="560" height="34" rx="17" fill="url(#hero)" opacity=".10"/>
-  <text x="96" y="154" class="eyebrow">FROM DECK OUTPUT TO REUSABLE PAGE MATERIALS</text>
+  <text x="72" y="82" class="title">deck-library：完整 Decks + 页面 Materials 的 H5 资产库</text>
+  <text x="72" y="120" class="subtitle">从 feishu-deck-h5 产物出发，把完整 deck 和页面素材同时沉淀到飞书多维表格，再支持检索、下钻、组合、渲染和链接治理。</text>
+  <rect x="72" y="140" width="780" height="34" rx="17" fill="url(#hero)" opacity=".10"/>
+  <text x="96" y="162" class="eyebrow">DECK.JSON + ASSETS → BASE REGISTRY → RECOMPOSED H5 DELIVERY</text>
 
   <g filter="url(#shadow)">
-    <rect x="72" y="188" width="842" height="810" rx="32" fill="rgba(255,255,255,.72)" stroke="#DCE8F7"/>
-    <text x="118" y="236" class="eyebrow">怎么用：从上到下执行</text>
-    <text x="118" y="270" class="label">一条直线流程，不绕弯</text>
-
-    <line x1="138" y1="332" x2="138" y2="888" stroke="#D9E6F5" stroke-width="4" stroke-linecap="round"/>
+    <rect x="72" y="220" width="1296" height="860" rx="34" fill="rgba(255,255,255,.74)" stroke="#DCE8F7"/>
 
     <g filter="url(#softShadow)">
-      <rect x="118" y="306" width="708" height="96" rx="24" fill="url(#dark)"/>
-      <circle cx="138" cy="354" r="24" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.24)"/>
-      <text x="129" y="361" class="num">1</text>
-      <text x="184" y="342" class="whiteLabel">基础产物：deck.json + 资源素材</text>
-      <text x="184" y="372" class="whiteSmall">deck-h5 / feishu-deck-h5 先产出标准结构和依赖资源。</text>
-      <text x="184" y="394" class="whiteCode">assets / pages / images / logo</text>
+      <rect x="108" y="258" width="1224" height="112" rx="28" fill="url(#deck)"/>
+      <text x="148" y="302" class="whiteLabel">1. feishu-deck-h5 先生成基础产物</text>
+      <text x="148" y="334" class="whiteSmall">deck-library 不替代渲染器；它接收已经生成或整理好的 H5 deck output。</text>
+      <text x="858" y="304" class="whiteCode">deck.json</text>
+      <text x="858" y="332" class="whiteCode">index.html</text>
+      <text x="1038" y="304" class="whiteCode">assets/</text>
+      <text x="1038" y="332" class="whiteCode">pages/ thumbnails</text>
     </g>
 
-    <path d="M138 408V438" stroke="#496782" stroke-width="3" marker-end="url(#arrowDown)"/>
+    <path d="M720 378V420" stroke="#496782" stroke-width="3" marker-end="url(#arrowDown)"/>
 
     <g filter="url(#softShadow)">
-      <rect x="118" y="442" width="708" height="96" rx="24" fill="#FFFFFF" stroke="#DDE8FA"/>
-      <circle cx="138" cy="490" r="24" fill="#E8F1FF" stroke="#D2E2FF"/>
-      <text x="129" y="497" class="num" fill="#1D5FE8">2</text>
-      <text x="184" y="478" class="stepTitle">安装与配置：Skill + 飞书多维表格</text>
-      <text x="184" y="508" class="small">旁边安装 sibling feishu-deck-h5，创建 Decks 和 Materials 两张表。</text>
-      <text x="184" y="530" class="code">skills/feishu-deck-h5/ + skills/deck-library/</text>
+      <rect x="196" y="430" width="1048" height="172" rx="30" fill="url(#base)"/>
+      <text x="238" y="478" class="whiteLabel">2. archive 写入飞书多维表格</text>
+      <text x="238" y="510" class="whiteSmall">一份 H5 deck 会同时进入两层资产表：完整 deck 可直接找，页面素材可拆页复用。</text>
+      <rect x="258" y="538" width="420" height="42" rx="21" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.24)"/>
+      <text x="286" y="565" class="whiteCode">archive.py --write</text>
+      <rect x="760" y="538" width="420" height="42" rx="21" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.24)"/>
+      <text x="788" y="565" class="whiteCode">migrate_schema.py / update metadata</text>
     </g>
 
-    <path d="M138 544V574" stroke="#496782" stroke-width="3" marker-end="url(#arrowDown)"/>
+    <path d="M720 610V652" stroke="#496782" stroke-width="3" marker-end="url(#arrowDown)"/>
 
     <g filter="url(#softShadow)">
-      <rect x="118" y="578" width="708" height="96" rx="24" fill="#FFFFFF" stroke="#DDE8FA"/>
-      <circle cx="138" cy="626" r="24" fill="#E8F1FF" stroke="#D2E2FF"/>
-      <text x="129" y="633" class="num" fill="#1D5FE8">3</text>
-      <text x="184" y="614" class="stepTitle">archive 入库：每页变成一个素材</text>
-      <text x="184" y="644" class="small">生成素材编号、缩略图、中文描述和可组合的底层 payload。</text>
-      <text x="184" y="666" class="code">M001 / thumbnail / 中文描述 / slide_payload_json</text>
+      <rect x="116" y="660" width="570" height="176" rx="28" fill="#FFFFFF" stroke="#D9E6FF"/>
+      <rect x="148" y="696" width="112" height="34" rx="17" fill="#EAF2FF"/>
+      <text x="170" y="718" class="eyebrow blue">DECKS</text>
+      <text x="148" y="766" class="cardTitle">完整在线 deck 库入口</text>
+      <text x="148" y="796" class="small">中文名称、中文描述、封面缩略图、online_url、链接状态、附件包。</text>
+      <text x="148" y="820" class="code">search_decks.py → 找完整材料</text>
     </g>
 
-    <path d="M138 680V710" stroke="#496782" stroke-width="3" marker-end="url(#arrowDown)"/>
-
     <g filter="url(#softShadow)">
-      <rect x="118" y="714" width="708" height="96" rx="24" fill="#FFFFFF" stroke="#CDEDEA"/>
-      <circle cx="138" cy="762" r="24" fill="#E6FBF5" stroke="#C6EFE4"/>
-      <text x="129" y="769" class="num" fill="#167D68">4</text>
-      <text x="184" y="750" class="stepTitle">浏览 / 检索 / 选编号</text>
-      <text x="184" y="780" class="small">人在多维表格里看缩略图，智能体按字段和语义检索。</text>
-      <text x="184" y="802" class="code">选择 M001 + M008 + M012</text>
+      <rect x="754" y="660" width="570" height="176" rx="28" fill="#FFFFFF" stroke="#CDEDEA"/>
+      <rect x="786" y="696" width="142" height="34" rx="17" fill="#E8FBF8"/>
+      <text x="806" y="718" class="eyebrow green">MATERIALS</text>
+      <text x="786" y="766" class="cardTitle">页面级素材库</text>
+      <text x="786" y="796" class="small">每页缩略图、页面角色、素材编号、复用状态、slide_payload_json。</text>
+      <text x="786" y="820" class="code">list_deck_materials.py / search.py → 下钻选页</text>
     </g>
 
-    <path d="M138 816V846" stroke="#496782" stroke-width="3" marker-end="url(#arrowDown)"/>
+    <path d="M404 846V886" stroke="#496782" stroke-width="3" marker-end="url(#arrowDown)"/>
+    <path d="M1036 846V886" stroke="#496782" stroke-width="3" marker-end="url(#arrowDown)"/>
 
     <g filter="url(#softShadow)">
-      <rect x="118" y="850" width="708" height="96" rx="24" fill="url(#delivery)"/>
-      <circle cx="138" cy="898" r="24" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.24)"/>
-      <text x="129" y="905" class="num">5</text>
-      <text x="184" y="886" class="whiteLabel">compose 组合 + deck-h5 渲染交付</text>
-      <text x="184" y="916" class="whiteSmall">按编号生成新 deck.json，恢复资源，再运行渲染和验证。</text>
-      <text x="184" y="938" class="whiteCode">render-deck.py --final → deck.json + index.html</text>
+      <rect x="220" y="898" width="1000" height="124" rx="30" fill="url(#delivery)"/>
+      <text x="262" y="946" class="whiteLabel">3. Agent 组合新 deck，feishu-deck-h5 渲染交付</text>
+      <text x="262" y="978" class="whiteSmall">按素材编号或页面角色读取 payload，恢复 assets_zip 依赖，生成新 deck.json，再运行渲染和验证。</text>
+      <text x="262" y="1006" class="whiteCode">compose_materials.py --deck-id / M001 M008 → render-deck.py --final</text>
     </g>
   </g>
 
-  <path d="M914 592H960" stroke="#496782" stroke-width="3" marker-end="url(#arrowRight)"/>
-  <text x="928" y="570" class="mini">沉淀结果</text>
-
   <g filter="url(#shadow)">
-    <rect x="960" y="188" width="408" height="810" rx="32" fill="#FFFFFF" stroke="#DCE8F7"/>
-    <rect x="1002" y="232" width="186" height="34" rx="17" fill="#E8FBF8"/>
-    <text x="1022" y="254" class="eyebrow green">效果：它可以干什么</text>
-    <text x="1002" y="306" class="label">把页面从“文件”变成“资产”</text>
-    <text x="1002" y="334" class="small">不再只交付一份 H5，而是沉淀可复用页面组件。</text>
-
-    <rect x="1002" y="380" width="324" height="102" rx="22" fill="#F3F7FF" stroke="#D9E6FF"/>
-    <text x="1030" y="416" class="stepTitle" font-size="20">素材沉淀</text>
-    <text x="1030" y="446" class="small">每页有缩略图、中文描述、质量标记。</text>
-    <text x="1030" y="468" class="code">native_h5 / subtle motion</text>
-
-    <rect x="1002" y="506" width="324" height="102" rx="22" fill="#F4FBFA" stroke="#CDEDEA"/>
-    <text x="1030" y="542" class="stepTitle" font-size="20">可视化挑选</text>
-    <text x="1030" y="572" class="small">人直接在飞书多维表格里看图选。</text>
-    <text x="1030" y="594" class="code">M001 / M008 / M012</text>
-
-    <rect x="1002" y="632" width="324" height="102" rx="22" fill="#F3F7FF" stroke="#D9E6FF"/>
-    <text x="1030" y="668" class="stepTitle" font-size="20">智能组合</text>
-    <text x="1030" y="698" class="small">Agent 不猜页面结构，直接读取 payload。</text>
-      <text x="1030" y="720" class="code">slide_payload_json to new deck.json</text>
-
-    <rect x="1002" y="758" width="324" height="102" rx="22" fill="#F4FBFA" stroke="#CDEDEA"/>
-    <text x="1030" y="794" class="stepTitle" font-size="20">持续复用</text>
-    <text x="1030" y="824" class="small">新交付物可以再次入库，素材库越用越厚。</text>
-    <text x="1030" y="846" class="code">archive → compose → render</text>
-
-    <rect x="1002" y="898" width="324" height="54" rx="20" fill="#10233D"/>
-    <text x="1030" y="932" class="whiteSmall">最终交付：可发布的 H5 + 可继续复用的素材</text>
+    <rect x="90" y="1100" width="1260" height="54" rx="27" fill="#10233D"/>
+    <text x="128" y="1134" class="whiteSmall">治理闭环：migrate_schema.py 保持表结构和视图，check_links.py 检查 online_url，update_*_metadata.py 安全维护人工字段。</text>
   </g>
-
-  <rect x="72" y="1024" width="1296" height="44" rx="22" fill="rgba(16,35,61,.06)" stroke="rgba(16,35,61,.08)"/>
-  <text x="104" y="1053" class="small">一句话：deck-library 不是渲染器，而是把 deck-h5 的页面资产化；渲染、验证和最终交付仍由 sibling feishu-deck-h5 完成。</text>
 </svg>
