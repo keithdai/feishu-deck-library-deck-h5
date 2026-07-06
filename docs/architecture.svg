@@ -74,7 +74,8 @@
       <text x="1038" y="332" class="whiteCode">pages/ thumbnails</text>
     </g>
 
-    <path d="M720 378V420" stroke="#496782" stroke-width="3" marker-end="url(#arrowDown)"/>
+    <path d="M720 378V420" stroke="#496782" stroke-width="3"/>
+    <path d="M710 410L720 420L730 410" stroke="#496782" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 
     <g filter="url(#softShadow)">
       <rect x="196" y="430" width="1048" height="172" rx="30" fill="url(#base)"/>
@@ -86,7 +87,8 @@
       <text x="788" y="565" class="whiteCode">migrate_schema.py / update metadata</text>
     </g>
 
-    <path d="M720 610V652" stroke="#496782" stroke-width="3" marker-end="url(#arrowDown)"/>
+    <path d="M720 610V652" stroke="#496782" stroke-width="3"/>
+    <path d="M710 642L720 652L730 642" stroke="#496782" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 
     <g filter="url(#softShadow)">
       <rect x="116" y="660" width="570" height="176" rx="28" fill="#FFFFFF" stroke="#D9E6FF"/>
@@ -106,8 +108,10 @@
       <text x="786" y="820" class="code">list_deck_materials.py / search.py → 下钻选页</text>
     </g>
 
-    <path d="M404 846V886" stroke="#496782" stroke-width="3" marker-end="url(#arrowDown)"/>
-    <path d="M1036 846V886" stroke="#496782" stroke-width="3" marker-end="url(#arrowDown)"/>
+    <path d="M404 846V886" stroke="#496782" stroke-width="3"/>
+    <path d="M394 876L404 886L414 876" stroke="#496782" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M1036 846V886" stroke="#496782" stroke-width="3"/>
+    <path d="M1026 876L1036 886L1046 876" stroke="#496782" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 
     <g filter="url(#softShadow)">
       <rect x="220" y="898" width="1000" height="124" rx="30" fill="url(#delivery)"/>
