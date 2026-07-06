@@ -13,12 +13,12 @@
 
 ## 它解决什么问题
 
-- 团队不只保存一次性交付文件，而是在 `Decks` 表统一维护“完整可访问的 pitch deck / 提案 / 汇报材料”。
+- 团队不只保存一次性交付文件，而是在 `Decks` 表统一维护完整 deck 条目：有线上链接时可直接打开，没有线上链接时也能保留附件和复用依赖。
 - 每份完整 deck 又会拆成 `Materials` 页面素材，支持按封面、案例、数据页、收尾等页面角色复用。
 - 多维表格同时服务人和 Agent：人看缩略图和中文说明，Agent 读结构化字段和 payload。
 - 组合时不反向解析渲染后 HTML，而是读取 `slide_payload_json` 重新生成标准 `deck.json`。
-- 复用时自动恢复 `Decks.assets_zip` 中的 `assets/` / `pages/` 依赖，再交给 sibling `feishu-deck-h5` 渲染和验证。
-- 支持库治理：schema/view 迁移、链接健康检查、安全元数据更新、质量分层、动效分层。
+- 复用时优先恢复 `Decks.assets_zip` 中的 `assets/` / `pages/` 依赖；如果归档时没有上传依赖包，则需要本地 `--asset-root` 或重新归档。
+- 支持库治理：schema/view 迁移、可信托管域名的链接健康检查、受保护字段不可直接改、人工字段可安全更新、质量分层、动效分层。
 
 ## 架构与使用流程
 
@@ -28,17 +28,20 @@
 
 这张图可以理解为：`deck-library` 不是渲染器，而是 H5 deck 资产库编排层。完整材料先进入 `Decks`，页面再进入 `Materials`；人通过多维表格浏览和维护，Agent 通过 CLI 检索、下钻、组合；最终渲染、验证和交付仍由 sibling `feishu-deck-h5` 完成。
 
-## 核心心智模型
+## Decks 和 Materials 怎么分工
 
-- `Decks` 表是完整 deck 库入口，一行是一份可浏览、可发布、可治理的 H5 演示材料。
-- `Materials` 表是页面素材库，一行是一个可复用页面。
-- `online_url` 是完整 deck 的线上访问入口；`link_health` / `链接状态` / `last_checked_at` 用于治理可用性。
-- `deck_id` 是连接 `Decks` 和 `Materials` 的稳定自动化主键。
+这套库不是简单存文件，而是把一份 H5 deck 拆成两层资产：`Decks` 负责完整材料的登记、浏览和治理，`Materials` 负责页面级素材的检索、下钻和重新组合。
+
+- `Decks` 表是一份完整 deck 的登记入口，一行对应一份 H5 演示材料。
+- `Materials` 表是页面素材库，一行对应一个可复用页面。
+- `deck_id` 是连接 `Decks` 和 `Materials` 的稳定主键。
+- `online_url` 是完整 deck 的线上访问入口；没有线上链接时，Decks 记录仍可保存附件和复用依赖。
+- `link_health` / `链接状态` / `last_checked_at` 用于治理线上链接是否还可用。
 - `material_code` 是给人看的短编号，例如 `M001`。
 - `material_id` 是稳定选择器，例如 `deck_demo:M001`。
-- `slide_payload_json` 是组合新 deck 的底层来源，不要从渲染后 HTML 里反向抽取。
+- `slide_payload_json` 是组合新 deck 的页面来源，不从渲染后 HTML 反向抽取。
 - `source_artifact_ref` 指向素材依赖，通常是 `base://deck/<deck_id>`。
-- `assets_zip` 保存 `assets/` / `pages/` 等共享依赖，保证团队复用时不依赖归档者本地路径。
+- `assets_zip` 保存 `assets/` / `pages/` 等共享依赖；组合复用依赖它或本地 `--asset-root`。
 
 ## Peer Dependency
 
@@ -72,7 +75,7 @@ skills/
 ```bash
 export DECK_LIBRARY_BASE_TOKEN="..."
 export DECK_LIBRARY_DECKS_TABLE="..."
-export DECK_LIBRARY_SLIDES_TABLE="..."
+export DECK_LIBRARY_SLIDES_TABLE="..."  # Materials 表；沿用历史环境变量名
 export DECK_LIBRARY_LARK_PROFILE="bytedance"
 ```
 
@@ -163,7 +166,7 @@ python3 skills/deck-library/assets/compose_materials.py M001 M008 M012 \
   --output-dir runs/composed/output
 ```
 
-检查完整 deck 线上链接状态：
+检查完整 deck 线上链接状态（只探测可信托管域名，避免把任意 URL 当作网络探测目标）：
 
 ```bash
 python3 skills/deck-library/assets/check_links.py --write \
@@ -194,7 +197,7 @@ python3 skills/deck-library/assets/check_links.py --write \
 2. 用 `archive.py --write` 写入飞书多维表格：`Decks` 存完整材料，`Materials` 存页面素材。
 3. 人在 `Decks` 表找完整材料；需要拆页时从 `Materials` 表下钻。
 4. Agent 用 `search_decks.py` / `list_deck_materials.py` / `search.py` 找候选页面。
-5. 用 `compose_materials.py` 生成新 `deck.json`，再交给 sibling `feishu-deck-h5` 渲染。
+5. 用 `compose_materials.py` 生成新 `deck.json`；需要交付时再调用 sibling `feishu-deck-h5` 渲染。
 6. 用 `check_links.py` 持续检查 `online_url`，把不可访问材料拉回 `draft/broken` 治理状态。
 
 ## 测试
